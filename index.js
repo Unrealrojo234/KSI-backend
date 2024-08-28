@@ -5,12 +5,13 @@ require("dotenv").config();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-app.use(express.json());
 app.use(cors());
+
+app.use(express.json());
 
 app.use(bodyParser.json({ limit: "5mb" }));
 
-dbConnectionString = process.env.CONNECTION_STRING;
+const dbConnectionString = process.env.CONNECTION_STRING;
 
 const News = require("./models/news");
 
